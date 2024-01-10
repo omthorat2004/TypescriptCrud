@@ -2,6 +2,12 @@ import React from 'react';
 import Row from '../Components/Row';
 import { contactsSelector, filterContactsSelector, filteredSelector } from '../Redux/contactSlice';
 import { useAppSelector } from '../Redux/hooks';
+interface Contact{
+  id:number;
+  name:string;
+  lastName:string;
+  contact:string;
+}
 const Home:React.FC = () => {
   // const dispatch = useDispatch()
 //  useEffect(()=>{
@@ -30,8 +36,8 @@ const Home:React.FC = () => {
   </thead>
   <tbody>
     
-      {contacts.map((ele)=>{
-        return <Row id={ele.id} name={ele.name} lastName={ele.lastName} contact={ele.contact}/>
+      {contacts.map((ele:Contact)=>{
+        return <Row  id={ele.id} name={ele.name} lastName={ele.lastName} contact={ele.contact}/>
       })}
     
    

@@ -1,9 +1,9 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { searchFilter } from '../Redux/contactSlice';
+import { useAppDispatch } from '../Redux/hooks';
 const Navbar = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   let search;
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
     search = e.target.value
